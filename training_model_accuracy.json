@@ -1,0 +1,72 @@
+{
+    "Linear Regression": 0.7449555328228536,
+    "Ridge Regression": {
+        "accuracy": 73.5849893211536,
+        "best_params": {
+            "alpha": 1.5
+        }
+    },
+    "Lasso Regression": {
+        "accuracy": 73.58601220173685,
+        "best_params": {
+            "alpha": 1.5
+        }
+    },
+    "Linear Support Vector Regression": {
+        "accuracy": 73.58333394818682,
+        "best_params": {
+            "loss": "squared_epsilon_insensitive"
+        }
+    },
+    "Decision Tree Regression": {
+        "accuracy": 83.14378504412613,
+        "best_params": {
+            "splitter": "best",
+            "max_depth": 5,
+            "criterion": "squared_error"
+        }
+    },
+    "AdaBoost Regression": {
+        "accuracy": 84.23098338390858,
+        "best_params": {
+            "n_estimators": 200,
+            "loss": "exponential",
+            "learning_rate": 0.001
+        }
+    },
+    "Bagging Regression": {
+        "accuracy": 53.822589095089825,
+        "best_params": {
+            "n_estimators": 15,
+            "max_features": 3
+        }
+    },
+    "Gradient Boosting Regression": {
+        "accuracy": 85.01820941219289,
+        "best_params": {
+            "n_estimators": 50,
+            "learning_rate": 0.1,
+            "criterion": "friedman_mse"
+        }
+    },
+    "Random Forest Regression": {
+        "accuracy": 82.67076613411639,
+        "best_params": {
+            "n_estimators": 100,
+            "criterion": "squared_error"
+        }
+    },
+    "KNN Regression": {
+        "accuracy": 76.06053383554874,
+        "best_params": {
+            "weights": "distance",
+            "n_neighbors": 5
+        }
+    },
+    "Support Vector Regression": {
+        "accuracy": -7.853843600976211,
+        "best_params": {
+            "kernel": "linear"
+        }
+    }
+}

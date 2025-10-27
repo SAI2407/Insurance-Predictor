@@ -1,0 +1,13 @@
+{
+    "Linear Regression": 0.7673797518549152,
+    "Ridge Regression": 0.7671739296090464,
+    "Lasso Regression": 0.7673457983343289,
+    "Linear Support Vector Regression": 0.7672799179505658,
+    "Decision Tree Regression": 0.8547604748357897,
+    "AdaBoost Regression": 0.8444418097074149,
+    "Bagging Regression": 0.40889731549608,
+    "Gradient Boosting Regression": 0.8656101734645794,
+    "Random Forest Regression": 0.8469581514887069,
+    "KNN Regression": 0.7963961560864614,
+    "Support Vector Regression": -0.06504882483901109
+}

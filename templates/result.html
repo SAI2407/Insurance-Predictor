@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prediction Result</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    .result-container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 {
+      color: #FF7F50; /* Coral/orange color */
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      color: #555;
+      margin: 10px 0;
+    }
+    h2 {
+      color: #20B2AA; /* Light Sea Green */
+      margin: 20px 0;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: white;
+      background-color: #FF7F50; /* Coral button */
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+    a:hover {
+      background-color: #e76b3c; /* Darker coral on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="result-container">
+    <h1>Insurance Cost Prediction</h1>
+    <p>Age: {{ age }}</p>
+    <p>BMI: {{ bmi }}</p>
+    <h2>Estimated Insurance Cost: ${{ cost }}</h2>
+    <p><strong>Prediction Time:</strong> {{ latency }} seconds</p>
+    
+
+    <a href="/">Go back</a>
+  </div>
+</body>
+</html>
