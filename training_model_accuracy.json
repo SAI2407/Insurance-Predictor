@@ -19,7 +19,7 @@
         }
     },
     "Decision Tree Regression": {
-        "accuracy": 83.14378504412613,
+        "accuracy": 82.71240225790031,
         "best_params": {
             "splitter": "best",
             "max_depth": 5,
@@ -27,7 +27,7 @@
         }
     },
     "AdaBoost Regression": {
-        "accuracy": 84.23098338390858,
+        "accuracy": 84.13147255199173,
         "best_params": {
             "n_estimators": 200,
             "loss": "exponential",
@@ -35,14 +35,14 @@
         }
     },
     "Bagging Regression": {
-        "accuracy": 53.822589095089825,
+        "accuracy": 58.44796779189427,
         "best_params": {
-            "n_estimators": 15,
+            "n_estimators": 20,
             "max_features": 3
         }
     },
     "Gradient Boosting Regression": {
-        "accuracy": 85.01820941219289,
+        "accuracy": 85.01690713822416,
         "best_params": {
             "n_estimators": 50,
             "learning_rate": 0.1,
@@ -50,10 +50,10 @@
         }
     },
     "Random Forest Regression": {
-        "accuracy": 82.67076613411639,
+        "accuracy": 82.6053556313745,
         "best_params": {
-            "n_estimators": 100,
-            "criterion": "squared_error"
+            "n_estimators": 150,
+            "criterion": "poisson"
         }
     },
     "KNN Regression": {

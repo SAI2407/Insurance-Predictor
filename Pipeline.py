@@ -7,6 +7,9 @@ import schedule
 import time
 from logging_code import logger
 
+
+
+
 def ml_pipeline():
     logger.info("Started ML pipeline")
     kaggle_dataset = "mosapabdelghany/medical-insurance-cost-dataset"
@@ -25,5 +28,7 @@ def ml_pipeline():
 
 
 if __name__ == "__main__":
+    
     ml_pipeline()
+
     

@@ -4,10 +4,10 @@
     "Lasso Regression": 0.7673457983343289,
     "Linear Support Vector Regression": 0.7672799179505658,
     "Decision Tree Regression": 0.8547604748357897,
-    "AdaBoost Regression": 0.8444418097074149,
-    "Bagging Regression": 0.40889731549608,
-    "Gradient Boosting Regression": 0.8656101734645794,
-    "Random Forest Regression": 0.8469581514887069,
+    "AdaBoost Regression": 0.8459481072001239,
+    "Bagging Regression": 0.4750575471955183,
+    "Gradient Boosting Regression": 0.865785516816457,
+    "Random Forest Regression": 0.8475749879157322,
     "KNN Regression": 0.7963961560864614,
     "Support Vector Regression": -0.06504882483901109
 }
