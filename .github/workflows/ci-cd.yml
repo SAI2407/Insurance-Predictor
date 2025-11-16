@@ -27,19 +27,20 @@ jobs:
       - name: Run tests
         run: pytest -v tests.py
 
-      
+      # AWS Credentials
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ap-southeast-2 
+          aws-region: ap-southeast-2
 
+      # Login to ECR
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
 
-      
+      # Build + Push Docker Image
       - name: Build and Push to ECR
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
@@ -49,20 +50,27 @@ jobs:
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
-      
+      # Deploy on EC2
       - name: Deploy to EC2
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.EC2_PUBLIC_IP }}  
+          host: ${{ secrets.EC2_PUBLIC_IP }}
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
+            # Login to ECR on EC2
+            aws ecr get-login-password --region ap-southeast-2 \
+              | sudo docker login --username AWS --password-stdin ${{ steps.login-ecr.outputs.registry }}
+
+            # Stop old container
             sudo docker stop insurance_app || true
             sudo docker rm insurance_app || true
 
+            # Pull latest image
             sudo docker pull ${{ steps.login-ecr.outputs.registry }}/insurance-predictor-image:latest
-          
+
+            # Run new container
             sudo docker run -d \
               --name insurance_app \
-              -p 80:80 \
+              -p 80:8000 \
               ${{ steps.login-ecr.outputs.registry }}/insurance-predictor-image:latest
